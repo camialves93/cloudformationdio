@@ -37,7 +37,7 @@ O CloudFormation é o serviço da AWS para modelar, provisionar e gerenciar recu
 
 ### Estrutura básica de um template
 Um template CloudFormation normalmente possui:
-```yaml
+
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Exemplo de criação de um bucket S3
 Resources:
@@ -45,31 +45,23 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: meu-bucket-exemplo
-Criando uma stack
-bash
-Copiar código
+
+### Criando uma stack
+
 aws cloudformation create-stack \
   --stack-name exemplo-s3 \
   --template-body file://simple-s3-bucket.yaml
-Atualizando uma stack
-bash
-Copiar código
+  
+### Atualizando uma stack
+
 aws cloudformation update-stack \
   --stack-name exemplo-s3 \
   --template-body file://simple-s3-bucket.yaml
-Boas práticas
+  
+### Boas práticas
 Sempre versionar templates no Git.
-
 Usar Parameters e Outputs para flexibilidade.
-
-Validar templates com:
-
-bash
-Copiar código
-aws cloudformation validate-template --template-body file://template.yaml
-yaml
-
-##  `terraform/notes.md`
+Validar templates com: aws cloudformation validate-template --template-body file://template.yaml
 
 ## Terraform — Notas e Aprendizados
 
@@ -77,7 +69,6 @@ yaml
 O Terraform é uma ferramenta da HashiCorp para provisionamento de infraestrutura em múltiplos provedores (AWS, Azure, GCP, etc).
 
 ### Estrutura básica de uma stack
-```hcl
 provider "aws" {
   region = "us-east-1"
 }
@@ -90,29 +81,26 @@ resource "aws_s3_bucket" "meu_bucket" {
 output "bucket_name" {
   value = aws_s3_bucket.meu_bucket.bucket
 }
-Passos para criar uma stack
-bash
-Copiar código
+
+## Passos para criar uma stack
+
 terraform init
 terraform plan
 terraform apply
 Modularização
+
 Recomenda-se dividir a infraestrutura em módulos reutilizáveis, por exemplo:
 
-css
 modules/
 └── s3/
     ├── main.tf
     ├── variables.tf
     └── outputs.tf
-Boas práticas
+
+## Boas práticas
 Utilizar remote backend (S3 + DynamoDB) para armazenar o estado.
-
 Implementar naming conventions consistentes.
-
 Usar workspaces para ambientes (dev, staging, prod).
-
-yaml
 
 # Comparação: CloudFormation vs Terraform
 

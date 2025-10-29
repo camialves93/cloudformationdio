@@ -68,13 +68,10 @@ bash
 Copiar código
 aws cloudformation validate-template --template-body file://template.yaml
 yaml
-Copiar código
-
 
 ##  `terraform/notes.md`
 
-```markdown
-# Terraform — Notas e Aprendizados
+## Terraform — Notas e Aprendizados
 
 ## O que é o Terraform?
 O Terraform é uma ferramenta da HashiCorp para provisionamento de infraestrutura em múltiplos provedores (AWS, Azure, GCP, etc).
@@ -103,7 +100,6 @@ Modularização
 Recomenda-se dividir a infraestrutura em módulos reutilizáveis, por exemplo:
 
 css
-Copiar código
 modules/
 └── s3/
     ├── main.tf
@@ -117,12 +113,7 @@ Implementar naming conventions consistentes.
 Usar workspaces para ambientes (dev, staging, prod).
 
 yaml
-Copiar código
 
-
-##  `insights/comparisons.md`
-
-```markdown
 # Comparação: CloudFormation vs Terraform
 
 | Aspecto                  | CloudFormation                         | Terraform                            |
@@ -136,9 +127,7 @@ Copiar código
 ### Conclusão
 - **CloudFormation**: Ideal para ambientes 100% AWS e integração nativa.  
 - **Terraform**: Melhor para cenários híbridos/multi-cloud e maior reuso.
-💭 insights/best-practices.md
-markdown
-Copiar código
+
 # Melhores Práticas IaC
 
 1. **Versionamento no Git** — Toda modificação de infraestrutura deve passar por versionamento.

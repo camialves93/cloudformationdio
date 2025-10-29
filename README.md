@@ -1,41 +1,6 @@
 # cloudformationdio
 Experiências e aprendizados sobre implementação de infraestrutura automatizada com AWS CloudFormation e Terraform.
 
-
-│
-├── README.md
-│
-├── cloudformation/
-│   ├── notes.md
-│   ├── examples/
-│   │   ├── simple-s3-bucket.yaml
-│   │   ├── vpc-network.yaml
-│   │   └── ec2-instance.yaml
-│   └── projects/
-│       └── multi-tier-app/
-│           ├── template.yaml
-│           └── parameters.json
-│
-├── terraform/
-│   ├── notes.md
-│   ├── examples/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
-│   │   └── provider.tf
-│   └── projects/
-│       └── aws-vpc/
-│           ├── main.tf
-│           ├── variables.tf
-│           ├── outputs.tf
-│           └── README.md
-│
-└── insights/
-    ├── comparisons.md
-    ├── best-practices.md
-    └── troubleshooting.md
-README.md — visão geral
-markdown
 Este repositório documenta minha jornada de aprendizado e experimentação na **implementação de infraestrutura automatizada** na AWS utilizando **CloudFormation** e **Terraform**.
 
 O objetivo é criar um material de apoio para estudos, referência e futuras implementações.
